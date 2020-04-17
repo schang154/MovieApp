@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="ask_title">Title: </string>
+    <string name="ask_description">Description: </string>
+    <string name="ask_link">Link: </string>
+    <string name="movies_added_title">Movie Watchlist</string>
+    <string name="button">Button</string>
+
+</resources>
