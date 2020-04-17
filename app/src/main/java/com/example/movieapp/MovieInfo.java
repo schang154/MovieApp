@@ -19,18 +19,34 @@ class MovieInfo {
 
 
     String getTitle() {
+    /*
+    Returns the title.
+    return: a String
+     */
         return this.title;
     }
 
     String getDescription() {
+    /*
+    Returns the description.
+    return: a String
+     */
         return this.description;
     }
 
     String getLink() {
+    /*
+    Returns the link.
+    return: a String
+     */
         return link;
     }
 
     protected String getMovieInfo() {
+    /*
+    Returns the movie information.
+    return: a String
+     */
         return String.format("%s\n\nDescription:\n%s\n\nLink: \n%s",
                 getTitle(), getDescription(), getLink());
     }

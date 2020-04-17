@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createMovie(View view) {
+    /*
+    Implements series of actions after the user clicks the button.
+     */
         InputMethodManager mgr =
                 (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
@@ -56,12 +59,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void resetEditText() {
+    /*
+    Clears edit text.
+     */
         titleBox.getText().clear();
         descriptionBox.getText().clear();
         linkBox.getText().clear();
     }
 
     private LinearLayout createHorizontalLinearLayout() {
+    /*
+    Returns a LinearLayout.
+    return: LinearLayout
+     */
         LinearLayout newLinearLayout = new LinearLayout(this);
         newLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
         newLinearLayout.setId(View.generateViewId());
@@ -69,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private TextView createTextView(String text) {
+    /*
+    Returns a TextView.
+    return: TextView
+     */
         TextView newTextView = new TextView(this);
         newTextView.setText(text);
         newTextView.setTextColor(Color.WHITE);
@@ -80,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private CardView createMovieCard() {
+    /*
+    Returns a movie CardView.
+    return: CardView
+     */
         CardView newMovieCard = new CardView(this);
         newMovieCard.setId(View.generateViewId());
         newMovieCard.setBackgroundColor(Color.WHITE);
@@ -88,6 +106,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addMovieCardToList(MovieInfo movie) {
+    /*
+    Adds CardView dynamically to the container that holds the movie items.
+    param movie: MovieInfo object
+     */
         TextView movieInput = this.createTextView(movie.getMovieInfo());
         LinearLayout infoContainer = this.createHorizontalLinearLayout();
         infoContainer.addView(movieInput, LayoutParams.MATCH_PARENT,
@@ -104,9 +126,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void writeToDatabase() {
-        int watchlist_size = watchlist.size();
-        String count = Integer.toString(watchlist_size);
-
+    /*
+    Writes data to database.
+     */
         DatabaseReference myRef = database.getReference(titleInput + "/title/");
         myRef.setValue(titleInput);
         myRef = database.getReference(titleInput + "/description/");
